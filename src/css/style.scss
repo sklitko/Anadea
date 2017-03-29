@@ -1,0 +1,305 @@
+body {
+  //background-image: url("images/bg.png");
+  //background-size: cover;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto";
+}
+
+#googlemaps {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  iframe {
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+#main {
+  position: relative;
+  z-index: 1;
+}
+
+.header {
+  width: 100%;
+  height: 80px;
+  background: white;
+
+  .logo {
+    font-weight: bold;
+    color: tomato;
+    padding: 25px 40px;
+    display: block;
+    float: left;
+    font-size: 20px;
+
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    float: left;
+  }
+  li {
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 16px;
+  }
+  li.active {
+    border-top: 3px solid;
+  }
+  li:hover {
+    border-top: 3px solid;
+  }
+  .menu {
+    text-align: center;
+    > ul > li {
+      margin-left: 50px;
+    }
+    > ul > li > a {
+      font-size: 16px;
+      display: block;
+      height: 80px;
+      line-height: 77px;
+      text-decoration: none;
+      color: #000;
+    }
+  }
+
+  .profile {
+     > li > a {
+      font-size: 16px;
+      display: block;
+      height: 80px;
+      line-height: 77px;
+      text-decoration: none;
+      color: #000;
+    }
+    li {
+      border-top: 3px solid transparent;
+    }
+    li:hover {
+      border-top: 3px solid;
+    }
+    float: right;
+    margin-right: 50px;
+  }
+}
+
+.tasks {
+  margin-top: 10px;
+  margin-left: 40px;
+  width: 330px;
+  .btn {
+    /* Rectangle 260 Copy */
+    background: #FFFFFF;
+    opacity: 1.00;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.297413);
+    border-radius: 4px;
+    border: none;
+    width: 100%;
+    height: 50px;
+    color: #4c71fe;
+    //font-weight: bold;
+    font-size: 18px;
+  }
+  .task {
+
+    background: #FFFFFF;
+    opacity: 1.00;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.297413);
+    border-radius: 4px;
+    width: 290px;
+    margin-top: 10px;
+    padding: 20px;
+    font-size: 22px;
+    float: left;
+  }
+  .date {
+
+    float: left;
+    font-size: 16px;
+    color: #909090;
+    width: 100%;
+  }
+  .btnEdit {
+    background-color: #4C71FE;
+    border: 0;
+    padding: 6px 10px;
+    color: white;
+    font-size: 14px;
+    border-radius: 5px;
+  }
+
+  .btnDelete {
+    background-color: white;
+    border: 0;
+    padding: 6px 10px;
+    color: #4c71fe;
+    font-size: 14px;
+  }
+  .message {
+    font-size: 20px;
+    color: #1A1B1F;
+    float: left;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 20px;
+  }
+}
+
+.form-task {
+  width: 505px;
+  height: 100%;
+  background: white;
+  position: absolute;
+  top: 80px;
+  right: 0;
+  .header-task {
+    background: #F1F1F1;
+    //width: 100%;
+    padding: 30px 40px;
+    line-height: 20px;
+  }
+  .createTask {
+    background-color: #4C71FE;
+    border: 0;
+    padding: 10px;
+    color: white;
+    font-size: 18px;
+    border-radius: 4px;
+    margin-top: 20px;
+    opacity: 1.00;
+  }
+  .text {
+    margin-top: 25px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000;
+    opacity: 1.00;
+
+  }
+  .location {
+    margin-top: 25px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    color: #1A1B1F;
+    opacity: 1.00;
+
+  }
+  .header-text {
+    color: #909090;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+  }
+
+  .form-task-item {
+    @extend .header-task;
+    background: white;
+    border-bottom: 1px solid #F1F1F1;
+    float: left;
+    width: 425px;
+  }
+
+  .address {
+    border: none;
+    width: 100%;
+    //margin-top: 30px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    color: #1A1B1F;
+    opacity: 1.00;
+    :active {
+      border: none;
+    }
+  }
+  .service-task {
+    label {
+      display: inline-block;
+      text-align: center;
+      font-size: 14px;
+      margin: 7px;
+    }
+    label > input {
+      visibility: hidden;
+      position: absolute;
+    }
+
+    label > div > img {
+      width: 45px;
+      height: 45px;
+    }
+
+    label > input + div {
+      width: 50px;
+      height: 50px;
+      padding: 7px;
+    }
+
+    label > input:checked + div {
+      border: 1px solid #4C71FE;
+      border-radius: 50%;
+    }
+
+    label > input:not(:checked) + div {
+      border: 1px solid transparent;
+    }
+  }
+  .plumber-tasks {
+
+    label {
+      display: inline-block;
+      text-align: center;
+      font-size: 16px;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+    label > input {
+      visibility: hidden;
+      position: absolute;
+    }
+
+    label > div > img {
+      width: 45px;
+      height: 45px;
+    }
+
+    label > input + div {
+      padding: 9px 13px;
+    }
+
+    label > input:checked + div {
+      border: 1px solid #4C71FE;
+      border-radius: 57px 57px 57px 57px;
+    }
+
+    label > input:not(:checked) + div {
+      border: 1px solid transparent;
+    }
+  }
+
+  .description-task {
+    .desc {
+      font-size: 18px;
+      line-height: 24px;
+      border: none;
+      width: 100%;
+    }
+
+  }
+
+}
+
+
+
